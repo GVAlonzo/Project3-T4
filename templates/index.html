@@ -1,34 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Costa Rica Weather</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Titanic Survival</title>
+
+  <!-- Bring in our bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="static/style.css">
 
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1>Visit the...</h1>
-      <p>Beach. Rainforest. Volcano. Tree House. Sloths.</p>
-      <p><a class="btn btn-primary btn-lg" href="" role="button">Get Data!</a></p>
+  <div class="container py-5">
+      <div class="jumbotron text-white jumbotron-image shadow" style="background-image: url(static/images/titanic2.jpg);">
+        <h2 class="mb-4">
+          Would you survive the Titanic shipwreck?
+        </h2>
+        <p class="mb-4">
+          Come find out.
+        </p>
+        <a href="" class="btn btn-primary">Real Data Overview</a>
+      </div>
     </div>
-    <h2>The typical weather in Costa Rica is:</h2>
+
     <form action="/submit" method="POST" class="row gx-3 gy-2 align-items-center"> 
       <div class="col-sm-3">
-        <label class="visually-hidden" for="specificSizeInputName">Name</label>
+        <label class="visually-hidden" for="specificSizeInputName">Ticket Price</label>
         <!-- This is the first input box -->
         <input type="text" class="form-control" id="ticketPrice" placeholder="Insert Ticket Price" name="price">
       </div>
       <div class="col-sm-3">
-        <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
+        <label class="visually-hidden" for="specificSizeInputGroupUsername">Ticket Class</label>
         <div class="input-group">
-          <div class="input-group-text">@</div>
+          <div class="input-group-text"></div>
           <!-- This is the second input box -->
-          <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Username" name="gender">
+          <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Ticket Class" name="gender">
         </div>
       </div>
       <div class="col-sm-3">
@@ -38,32 +47,44 @@
           <option selected>Choose...</option>
           <option value="0">Female</option>
           <option value="1">Male</option>
-          <option value="3">Three</option>
         </select>
       </div>
-      <div class="col-auto">
-        <div class="form-check">
-          <!-- This is the third input box -->
-          <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
-          <label class="form-check-label" for="autoSizingCheck2">
-            Remember me
-          </label>
-        </div>
-      </div>
+
       <div class="col-auto">
         <!-- This is our submit button -->
         <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
-    <h3> RESULTS ARE!</h3>
-    <p> {{ticketPrice}} </p>
-    <p>{{genderMF}}</p>
+    <br>
 
+  <div class="row">
+    <div class="col-md-12">
+      <h3> RESULTS ARE!</h3>
+      <p> {{ticketPrice}} </p>
+      <p>{{genderMF}}</p>
+    </div>
   </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt optio provident tempora amet, eveniet et, eum illum, culpa laborum dicta recusandae magni architecto. Illo saepe facilis, unde. Debitis, atque, doloremque?</p>
+    </div>
+    <div class="col-md-3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum perferendis voluptates error ullam placeat repellendus. Repellendus error repellat veritatis recusandae voluptates earum rerum consectetur itaque, ipsam nihil. Alias, nemo.</p>
+    </div>
+    <div class="col-md-3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ratione sint ex porro excepturi non dolorum, ullam ea quae vel earum, soluta obcaecati natus. Eligendi iusto accusantium mollitia debitis assumenda!</p>
+    </div>
+    <div class="col-md-3">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus dicta quisquam, expedita fugiat ipsum animi sequi earum blanditiis laboriosam voluptatem, voluptates pariatur recusandae reiciendis hic explicabo maiores laudantium voluptate sint.</p>
+    </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  
+  <div class = "bg" style="background-image: url(static/images/iceberg.jpg);">
+  </div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
- 
