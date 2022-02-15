@@ -10,7 +10,7 @@
 
   <!-- Bring in our bootstrap stylesheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
 </head>
 <body>
@@ -19,31 +19,57 @@
         <h2 class="mb-4">
           Would you survive the Titanic shipwreck?
         </h2>
-        <p class="mb-4">
-          Come find out.
+        <p class="mb-4"> 
+          <strong>Come Find Out!</strong>
         </p>
-        <a href="" class="btn btn-primary">Real Data Overview</a>
+        <a href="http://127.0.0.1:5000/overview" class="btn btn-primary">Data Overview</a>
       </div>
     </div>
 
-    <form action="/submit" method="POST" class="row gx-3 gy-2 align-items-center"> 
-      <div class="col-sm-3">
+    <form action="/submit" method="POST" class="row gx-3 by-2 align-items-center"> 
+      <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeInputName">Ticket Price</label>
         <!-- This is the first input box -->
         <input type="text" class="form-control" id="ticketPrice" placeholder="Insert Ticket Price" name="price">
+        <br>
       </div>
-      <div class="col-sm-3">
-        <label class="visually-hidden" for="specificSizeInputGroupUsername">Ticket Class</label>
-        <div class="input-group">
-          <div class="input-group-text"></div>
-          <!-- This is the second input box -->
-          <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Ticket Class" name="gender">
-        </div>
+
+      <div class="col-sm-5">
+        <label class="visually-hidden" for="specificSizeInputName">Passenger Age</label>
+        <!-- This is the second input box -->
+        <input type="text" class="form-control" id="passengerAge" placeholder="Insert Passenger Age" name="age">
+        <br>
       </div>
-      <div class="col-sm-3">
+
+      <div class="col-sm-5">
+        <label class="visually-hidden" for="specificSizeInputName"># of Siblings & Spouses</label>
+        <!-- This is the third input box -->
+        <input type="text" class="form-control" id="siblingsSpouses" placeholder="Insert # of Siblings & Spouses" name="sibsp">
+        <br>
+      </div>
+
+      <div class="col-sm-5">
+        <label class="visually-hidden" for="specificSizeInputName"># of Parents & Children</label>
+        <!-- This is the fourth input box -->
+        <input type="text" class="form-control" id="parentsChildren" placeholder="Insert # of Parents & Children" name="parch">
+        <br>
+      </div>
+
+      <div class="col-sm-5">
+        <label class="visually-hidden" for="specificSizeSelect">Ticket Class</label>
+        <!-- This is the first drop down box -->
+        <select class="form-select" id="ticketClass" name="class">
+          <option selected>Choose...</option>
+          <option value="1">First</option>
+          <option value="2">Second</option>
+          <option value="3">Third</option>
+        </select>
+      </div>
+      
+      <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeSelect">Gender</label>
-        <!-- This is the drop down box -->
-        <select class="form-select" id="specificSizeSelect">
+        <!-- This is the second drop down box -->
+        <select class="form-select" id="genderMF" name="gender">
           <option selected>Choose...</option>
           <option value="0">Female</option>
           <option value="1">Male</option>
@@ -59,9 +85,9 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h3> RESULTS ARE!</h3>
-      <p> {{ticketPrice}} </p>
-      <p>{{genderMF}}</p>
+      <h3><center>RESULTS ARE:</center></h3>
+      <p><center>{{ticketPrice}}</center></p>
+      <p><center>{{genderMF}}</center></p>
     </div>
   </div>
 
@@ -81,7 +107,7 @@
     </div>
   </div>
   
-  <div class = "bg" style="background-image: url(static/images/iceberg.jpg);">
+  <div class ="bg" style="background-image: url(static/images/iceberg.jpg);">
   </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
