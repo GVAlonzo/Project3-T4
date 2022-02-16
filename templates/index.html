@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <form action="/submit" method="POST" class="row gx-3 by-2 align-items-center"> 
+    <form action='/predict' method="POST" class="row gx-3 by-2 align-items-center"> 
       <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeInputName">Ticket Price</label>
         <!-- This is the first input box -->
@@ -71,14 +71,14 @@
         <!-- This is the second drop down box -->
         <select class="form-select" id="genderMF" name="gender">
           <option selected>Choose...</option>
-          <option value="0">Female</option>
-          <option value="1">Male</option>
+          <option value="1">Female</option>
+          <option value="0">Male</option>
         </select>
       </div>
 
       <div class="col-auto">
         <!-- This is our submit button -->
-        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="Submit" class="btn btn-primary">Predict</button>
       </div>
     </form>
     <br>
@@ -88,6 +88,7 @@
       <h3><center>RESULTS ARE:</center></h3>
       <p><center>{{ticketPrice}}</center></p>
       <p><center>{{genderMF}}</center></p>
+      <p><center>This Passenger {{result}}!</center></p>
     </div>
   </div>
 
