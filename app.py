@@ -53,29 +53,31 @@ def predict():
     # print("ticket_price:", ticket_price)
     # print("gender_mf:", gender_mf)
 
-    tt = {
-           "ticket_class":ticket_class,
-           "passenger_age":passenger_age,
-           "siblings_spouses":siblings_spouses,
-           "parents_children":parents_children,
-           "ticket_price":ticket_price,
-           "gender_mf":gender_mf #,
-        #    "fake_data":2 
-    }
+    # tt = {
+    #        "ticket_class":ticket_class,
+    #        "passenger_age":passenger_age,
+    #        "siblings_spouses":siblings_spouses,
+    #        "parents_children":parents_children,
+    #        "ticket_price":ticket_price,
+    #        "gender_mf":gender_mf #,
+    #     #    "fake_data":2 
+    # }
 
-    titanic_variable = pd.DataFrame(tt, index=[0])
+    # titanic_variable = pd.DataFrame(tt, index=[0])
 
-    prediction_encoded = model.predict(titanic_variable)
+    # prediction_encoded = model.predict(titanic_variable)
 
-    # print("prediction_encoded:", prediction_encoded[0])
+    # # print("prediction_encoded:", prediction_encoded[0])
 
-    if prediction_encoded[0] == 0:
-        # print("ENCODED == 0 -> DIED")
-        result = "Died"
+    # if prediction_encoded[0] == 0:
+    #     # print("ENCODED == 0 -> DIED")
+    #     result = "Died"
 
-    else:
-        # print("ENCODED != 0 -> LIVED")        
-        result = "Lived"
+    # else:
+    #     # print("ENCODED != 0 -> LIVED")        
+    #     result = "Lived"
+
+    result = "Shirley"
 
     # We could put a list of Result Labels such as "Survivor", "Dead"
     # prediction_labels = [""]
@@ -91,7 +93,7 @@ def predict():
 
     # prediction_text = f'Predicted Class:  {prediction}'
     # return render_template('index.html', prediction_text=prediction_text, features=features)
-    return render_template("index.html", ticketClass=ticket_class, passengerAge=passenger_age, singblingsSpouses=siblings_spouses, parentsChildren=parents_children, ticketPrice=ticket_price, genderMF=predict, result=result)
+    return render_template("index.html", ticketClass=ticket_class, passengerAge=passenger_age, singblingsSpouses=siblings_spouses, parentsChildren=parents_children, ticketPrice=ticket_price, genderMF=gender_mf, result=result)
 
 if __name__ == "__main__":
     app.run(debug=True)
