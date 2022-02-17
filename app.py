@@ -59,11 +59,10 @@ def predict():
            "siblings_spouses":siblings_spouses,
            "parents_children":parents_children,
            "ticket_price":ticket_price,
-           "gender_mf":gender_mf #,
-        #    "fake_data":2 
+           "gender_mf":gender_mf
     }
 
-    titanic_variable = pd.DataFrame(tt, index=[0])
+    # titanic_variable = pd.DataFrame(tt, index=[0])
 
     # prediction_encoded = model.predict(titanic_variable)
 
