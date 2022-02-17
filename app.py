@@ -10,14 +10,14 @@ model = load(open('survival_model_trained.pkl', 'rb'))
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
-    ticket_price = ""
     ticket_class = ""
     passenger_age = ""
+    ticket_price = ""
     siblings_spouses = ""
     parents_children = ""
     gender_mf = ""
     # Return template and data
-    return render_template("index.html",ticketPrice=ticket_price, ticketClass=ticket_class, passengerAge=passenger_age, singblingsSpouses=siblings_spouses, parentsChildren=parents_children, genderMF=gender_mf)
+    return render_template("index.html", ticketClass=ticket_class, passengerAge=passenger_age, singblingsSpouses=siblings_spouses, parentsChildren=parents_children, ticketPrice=ticket_price,  genderMF=gender_mf)
 
 # @app.route("/submit", methods=["POST"])
 # def form():
@@ -38,27 +38,27 @@ def overview():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-
-    ticket_price = float(request.form["price"])
     ticket_class = int(request.form["class"])
     passenger_age = float(request.form["age"])
-    # talk about making this a drop down, so they cant make this a bad number 
     siblings_spouses = int(request.form["sibsp"]) 
+    # talk about making this a drop down, so they cant make this a bad number 
     parents_children= int(request.form["parch"])
+    ticket_price = float(request.form["price"])
     gender_mf = int(request.form["gender"])
     
-    print("ticket_price:", ticket_price)
     print("ticket_class:", ticket_class)
     print("passenger_age:", passenger_age)
     print("siblings_spouses:", siblings_spouses)
     print("parents_children:", parents_children)
+    print("ticket_price:", ticket_price)
     print("gender_mf:", gender_mf)
 
-    tt = {"ticket_price":ticket_price,
+    tt = {
            "ticket_class":ticket_class,
            "passenger_age":passenger_age,
            "siblings_spouses":siblings_spouses,
            "parents_children":parents_children,
+           "ticket_price":ticket_price,
            "gender_mf":gender_mf #,
         #    "fake_data":2 
     }
@@ -91,7 +91,7 @@ def predict():
 
     # prediction_text = f'Predicted Class:  {prediction}'
     # return render_template('index.html', prediction_text=prediction_text, features=features)
-    return render_template("index.html",ticketPrice=ticket_price, ticketClass=ticket_class, passengerAge=passenger_age, genderMF=predict, result=result)
+    return render_template("index.html", ticketClass=ticket_class, passengerAge=passenger_age, singblingsSpouses=siblings_spouses, parentsChildren=parents_children, ticketPrice=ticket_price, genderMF=predict, result=result)
 
 if __name__ == "__main__":
     app.run(debug=True)
