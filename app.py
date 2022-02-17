@@ -46,12 +46,12 @@ def predict():
     ticket_price = float(request.form["price"])
     gender_mf = int(request.form["gender"])
     
-    print("ticket_class:", ticket_class)
-    print("passenger_age:", passenger_age)
-    print("siblings_spouses:", siblings_spouses)
-    print("parents_children:", parents_children)
-    print("ticket_price:", ticket_price)
-    print("gender_mf:", gender_mf)
+    # print("ticket_class:", ticket_class)
+    # print("passenger_age:", passenger_age)
+    # print("siblings_spouses:", siblings_spouses)
+    # print("parents_children:", parents_children)
+    # print("ticket_price:", ticket_price)
+    # print("gender_mf:", gender_mf)
 
     tt = {
            "ticket_class":ticket_class,
@@ -67,14 +67,14 @@ def predict():
 
     prediction_encoded = model.predict(titanic_variable)
 
-    print("prediction_encoded:", prediction_encoded[0])
+    # print("prediction_encoded:", prediction_encoded[0])
 
     if prediction_encoded[0] == 0:
-        print("ENCODED == 0 -> DIED")
+        # print("ENCODED == 0 -> DIED")
         result = "Died"
 
     else:
-        print("ENCODED != 0 -> LIVED")        
+        # print("ENCODED != 0 -> LIVED")        
         result = "Lived"
 
     # We could put a list of Result Labels such as "Survivor", "Dead"
