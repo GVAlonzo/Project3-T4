@@ -47,24 +47,34 @@ def predict():
     parents_children= int(request.form["parch"])
     gender_mf = int(request.form["gender"])
     
+    print("ticket_price:", ticket_price)
+    print("ticket_class:", ticket_class)
+    print("passenger_age:", passenger_age)
+    print("siblings_spouses:", siblings_spouses)
+    print("parents_children:", parents_children)
+    print("gender_mf:", gender_mf)
 
     tt = {"ticket_price":ticket_price,
            "ticket_class":ticket_class,
            "passenger_age":passenger_age,
            "siblings_spouses":siblings_spouses,
            "parents_children":parents_children,
-           "gender_mf":gender_mf,
-           "fake_data":2 
+           "gender_mf":gender_mf #,
+        #    "fake_data":2 
     }
 
     titanic_variable = pd.DataFrame(tt, index=[0])
 
     prediction_encoded = model.predict(titanic_variable)
 
-    if prediction_encoded == 0:
+    print("prediction_encoded:", prediction_encoded[0])
+
+    if prediction_encoded[0] == 0:
+        print("ENCODED == 0 -> DIED")
         result = "Died"
 
     else:
+        print("ENCODED != 0 -> LIVED")        
         result = "Lived"
 
     # We could put a list of Result Labels such as "Survivor", "Dead"
