@@ -65,7 +65,7 @@ def predict():
 
     titanic_variable = pd.DataFrame(tt, index=[0])
 
-    prediction_encoded = model.predict(titanic_variable)
+    # prediction_encoded = model.predict(titanic_variable)
 
     # print("prediction_encoded:", prediction_encoded[0])
 
