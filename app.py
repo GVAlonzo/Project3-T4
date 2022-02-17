@@ -69,9 +69,9 @@ def predict():
     # print("prediction_encoded:", prediction_encoded[0])
 
     result = "Lived"
-    # if prediction_encoded[0] == 0:
-    #     # print("ENCODED == 0 -> DIED")
-    #     result = "Died"
+    if prediction_encoded[0] == 0:
+        # print("ENCODED == 0 -> DIED")
+        result = "Died"
 
     
     # We could put a list of Result Labels such as "Survivor", "Dead"
