@@ -30,28 +30,28 @@
       <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeInputName">Ticket Price</label>
         <!-- This is the first input box -->
-        <input type="text" class="form-control" id="ticketPrice" placeholder="Insert Ticket Price" name="price" required="required">
+        <input type="text" class="form-control" id="ticketPrice" placeholder="Insert Ticket Price" name="price" required="required" {% if ticketPrice %} value={{ticketPrice}} {% endif %}>
         <br>
       </div>
 
       <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeInputName">Passenger Age</label>
         <!-- This is the second input box -->
-        <input type="text" class="form-control" id="passengerAge" placeholder="Insert Passenger Age" name="age" required="required">
+        <input type="text" class="form-control" id="passengerAge" placeholder="Insert Passenger Age" name="age" required="required" {% if passengerAge %} value={{passengerAge}} {% endif %}>
         <br>
       </div>
 
       <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeInputName"># of Siblings & Spouses</label>
         <!-- This is the third input box -->
-        <input type="text" class="form-control" id="siblingsSpouses" placeholder="Insert # of Siblings & Spouses" name="sibsp" required="required">
+        <input type="text" class="form-control" id="siblingsSpouses" placeholder="Insert # of Siblings & Spouses" name="sibsp" required="required" {% if singblingsSpouses %} value={{singblingsSpouses}} {% endif %}>
         <br>
       </div>
 
       <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeInputName"># of Parents & Children</label>
         <!-- This is the fourth input box -->
-        <input type="text" class="form-control" id="parentsChildren" placeholder="Insert # of Parents & Children" name="parch" required="required">
+        <input type="text" class="form-control" id="parentsChildren" placeholder="Insert # of Parents & Children" name="parch" required="required" {% if parentsChildren %} value={{parentsChildren}} {% endif %}>
         <br>
       </div>
 
@@ -59,6 +59,7 @@
         <label class="visually-hidden" for="specificSizeSelect">Ticket Class</label>
         <!-- This is the first drop down box -->
         <select class="form-select" id="ticketClass" name="class" required>
+        <!-- <select class="form-select" id="ticketClass" name="class" {% if ticketClass %} value={{ticketClass}} {% endif %} required></select> -->
           <option value="">Choose...</option>
           <option value="1">First</option>
           <option value="2">Second</option>
@@ -69,7 +70,9 @@
       <div class="col-sm-5">
         <label class="visually-hidden" for="specificSizeSelect">Gender</label>
         <!-- This is the second drop down box -->
-        <select class="form-select" id="genderMF" name="gender" required>
+        <select class="form-select" id="genderMF" name="gender" required="required">
+        <!-- <select class="form-select" id="genderMF" name="gender" required="required" {% if genderMF %} value={{genderMF}} {% endif %}> -->
+        <!-- <select class="form-select" id="genderMF" name="gender" {% if genderMF %} value="1" {% endif %}> -->
           <option value="">Choose...</option>
           <option value="1">Female</option>
           <option value="0">Male</option>
